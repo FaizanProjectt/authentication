@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Records List</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        color: #2d3748;
+        padding: 40px 20px;
+        margin: 0;
+      }
+      h1 {
+        text-align: center;
+        color: #2c5282;
+        font-weight: 700;
+        margin-bottom: 32px;
+        user-select: none;
+      }
+      ul.records-list {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0;
+        list-style-type: none;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgb(0 0 0 / 0.1);
+      }
+      ul.records-list li {
+        padding: 20px 28px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      ul.records-list li:last-child {
+        border-bottom: none;
+      }
+      strong {
+        color: #4a5568;
+        user-select: text;
+      }
+      li hr {
+        border: none;
+        border-top: 1px solid #cbd5e0;
+        margin: 16px 0 0 0;
+        opacity: 0.35;
+        user-select: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All Records <a href="/">🔹Back to Home🔹🏠</a></h1>
+    <ul class="records-list">
+      <% if (allDetails.length === 0) { %>
+      <li style="text-align: center; color: #718096; user-select: none">
+        No records to display.
+      </li>
+      <% } else { %> <% allDetails.forEach(detail => { %>
+      <li>
+        <strong>Name:</strong> <%= detail.name %><br />
+        <strong>Designation:</strong> <%= detail.designation %><br />
+        <strong>Achievements:</strong> <%= detail.achievements %><br />
+        <button><a href="/update/<%= detail._id %>">Update</a></button>
+        <button><a href="/delete/<%= detail._id %>">Delete</a></button>
+      </li>
+      <% }) %> <% } %>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/create.css" />
+    <title>Data Form</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create New Data</h2>
+      <form id="createDataForm" method="post" action="/create">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter name"
+          required
+        />
+
+        <label for="description">Designation</label>
+        <textarea
+          id="description"
+          name="designation"
+          placeholder="Enter description"
+          required
+        ></textarea>
+
+        <label for="achievements">Achievements</label>
+        <textarea
+          id="achievements"
+          name="achievements"
+          placeholder="Enter achievements"
+          required
+        ></textarea>
+
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </body>
+</html>

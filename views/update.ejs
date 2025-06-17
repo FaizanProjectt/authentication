@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/create.css" />
+    <title>Update Form</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Update Data</h2>
+      <form id="createDataForm" method="post" action="/update/<%=detail._id %>">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter name"
+          value="<%= detail.name %>"
+          required
+        />
+
+        <label for="description">Designation</label>
+        <textarea
+          id="description"
+          name="designation"
+          placeholder="Enter description"
+          required
+        >
+<%= detail.designation %></textarea
+        >
+
+        <label for="achievements">Achievements</label>
+        <textarea
+          id="achievements"
+          name="achievements"
+          placeholder="Enter achievements"
+          required
+        >
+<%= detail.achievements %></textarea
+        >
+
+        <button type="submit">update</button>
+      </form>
+    </div>
+  </body>
+</html>
